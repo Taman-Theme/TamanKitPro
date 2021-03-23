@@ -1,0 +1,60 @@
+.tk-flipbox{width:100%;height:300px;background-color:transparent;-webkit-perspective:1000px;perspective:1000px}
+.tk-flipbox .tk-flipbox__inner{position:relative;width:100%;height:100%;-webkit-transition:all .6s ease-in-out;-o-transition:all .6s ease-in-out;transition:all .6s ease-in-out;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}
+.tk-flipbox .tk-flipbox__inner .tk-flipbox__front{background-color:#1e87f0}
+.tk-flipbox .tk-flipbox__inner .tk-flipbox__back{background-color:#222}
+.tk-flipbox .tk-flipbox__inner .tk-flipbox__back .tk-flipbox__description:not(:last-child){margin:0 0 20px}
+.tk-flipbox .tk-flipbox__inner .tk-flipbox__back .tk-flipbox__button{border:solid 2px #fff;color:#fff;padding:12px;cursor:pointer}
+.tk-flipbox .tk-flipbox__inner .tk-flipbox__front,
+.tk-flipbox .tk-flipbox__inner .tk-flipbox__back{position:absolute;width:100%;height:100%}
+.tk-flipbox .tk-flipbox__icon-wrapper.stratum-view-stacked .tk-flipbox__icon{padding:.5em;background-color:rgba(0,0,0,.5)}
+.tk-flipbox .tk-flipbox__icon-wrapper.stratum-view-framed .tk-flipbox__icon{padding:.5em;border:3px solid}
+.tk-flipbox .tk-flipbox__icon-wrapper.stratum-shape-circle .tk-flipbox__icon{border-radius:50%}
+.tk-flipbox .tk-flipbox__layer__overlay{height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding:35px}
+.tk-flipbox .tk-flipbox__layer__overlay .tk-flipbox__icon{display:inline-block;font-size:50px;text-align:center;color:#fff}
+.tk-flipbox .tk-flipbox__layer__overlay .tk-flipbox__icon i{display:block;width:1em;height:1em}
+.tk-flipbox .tk-flipbox__layer__overlay .tk-flipbox__icon i:before{position:absolute;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}
+.tk-flipbox .tk-flipbox__layer__overlay .tk-flipbox__title,
+.tk-flipbox .tk-flipbox__layer__overlay .tk-flipbox__description{color:#fff}
+.tk-flipbox .tk-flipbox__layer__overlay .tk-flipbox__image img{width:25%}
+.tk-flipbox.flip-box-effect-flip.flip-box-direction-right:hover .tk-flipbox__inner{-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}
+.tk-flipbox.flip-box-effect-flip.flip-box-direction-left:hover .tk-flipbox__inner{-webkit-transform:rotateY(-180deg);transform:rotateY(-180deg)}
+.tk-flipbox.flip-box-effect-flip.flip-box-direction-up:hover .tk-flipbox__inner{-webkit-transform:rotateX(180deg);transform:rotateX(180deg)}
+.tk-flipbox.flip-box-effect-flip.flip-box-direction-up .tk-flipbox__back{-webkit-transform:rotateX(180deg);transform:rotateX(180deg)}
+.tk-flipbox.flip-box-effect-flip.flip-box-direction-down:hover .tk-flipbox__inner{-webkit-transform:rotateX(-180deg);transform:rotateX(-180deg)}
+.tk-flipbox.flip-box-effect-flip.flip-box-direction-down .tk-flipbox__back{-webkit-transform:rotateX(-180deg);transform:rotateX(-180deg)}
+.tk-flipbox.flip-box-effect-flip .tk-flipbox__back{-webkit-transform:rotateY(180deg);transform:rotateY(180deg)}
+.tk-flipbox.flip-box-effect-zoom-in:hover .tk-flipbox__back{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
+.tk-flipbox.flip-box-effect-zoom-in .tk-flipbox__back{opacity:0;-webkit-transform:scale(.55);-ms-transform:scale(.55);transform:scale(.55);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-zoom-out:hover .tk-flipbox__front{opacity:0;-webkit-transform:scale(.55);-ms-transform:scale(.55);transform:scale(.55)}
+.tk-flipbox.flip-box-effect-zoom-out .tk-flipbox__front{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);-webkit-transition:.6s;-o-transition:.6s;transition:.6s;z-index:2}
+.tk-flipbox.flip-box-effect-slide.flip-box-direction-right:hover .tk-flipbox__back{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}
+.tk-flipbox.flip-box-effect-slide.flip-box-direction-right .tk-flipbox__back{-webkit-transform:translateX(-100%) translateY(0);-ms-transform:translateX(-100%) translateY(0);transform:translateX(-100%) translateY(0);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-slide.flip-box-direction-left:hover .tk-flipbox__back{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}
+.tk-flipbox.flip-box-effect-slide.flip-box-direction-left .tk-flipbox__back{-webkit-transform:translateX(100%) translateY(0);-ms-transform:translateX(100%) translateY(0);transform:translateX(100%) translateY(0);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-slide.flip-box-direction-up:hover .tk-flipbox__back{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}
+.tk-flipbox.flip-box-effect-slide.flip-box-direction-up .tk-flipbox__back{-webkit-transform:translateX(0) translateY(100%);-ms-transform:translateX(0) translateY(100%);transform:translateX(0) translateY(100%);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-slide.flip-box-direction-down:hover .tk-flipbox__back{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}
+.tk-flipbox.flip-box-effect-slide.flip-box-direction-down .tk-flipbox__back{-webkit-transform:translateX(0) translateY(-100%);-ms-transform:translateX(0) translateY(-100%);transform:translateX(0) translateY(-100%);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-right:hover .tk-flipbox__back{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-right:hover .tk-flipbox__front{-webkit-transform:translateX(100%) translateY(0);-ms-transform:translateX(100%) translateY(0);transform:translateX(100%) translateY(0)}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-right .tk-flipbox__back{-webkit-transform:translateX(-100%) translateY(0);-ms-transform:translateX(-100%) translateY(0);transform:translateX(-100%) translateY(0);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-right .tk-flipbox__front{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-left:hover .tk-flipbox__back{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-left:hover .tk-flipbox__front{-webkit-transform:translateX(-100%) translateY(0);-ms-transform:translateX(-100%) translateY(0);transform:translateX(-100%) translateY(0)}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-left .tk-flipbox__back{-webkit-transform:translateX(100%) translateY(0);-ms-transform:translateX(100%) translateY(0);transform:translateX(100%) translateY(0);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-left .tk-flipbox__front{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-up:hover .tk-flipbox__back{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-up:hover .tk-flipbox__front{-webkit-transform:translateX(0) translateY(-100%);-ms-transform:translateX(0) translateY(-100%);transform:translateX(0) translateY(-100%)}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-up .tk-flipbox__back{-webkit-transform:translateX(0) translateY(100%);-ms-transform:translateX(0) translateY(100%);transform:translateX(0) translateY(100%);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-up .tk-flipbox__front{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-down:hover .tk-flipbox__back{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0)}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-down:hover .tk-flipbox__front{-webkit-transform:translateX(0) translateY(100%);-ms-transform:translateX(0) translateY(100%);transform:translateX(0) translateY(100%)}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-down .tk-flipbox__back{-webkit-transform:translateX(0) translateY(-100%);-ms-transform:translateX(0) translateY(-100%);transform:translateX(0) translateY(-100%);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-push.flip-box-direction-down .tk-flipbox__front{-webkit-transform:translateX(0) translateY(0);-ms-transform:translateX(0) translateY(0);transform:translateX(0) translateY(0);-webkit-transition:.6s;-o-transition:.6s;transition:.6s}
+.tk-flipbox.flip-box-effect-push .tk-flipbox__inner,.tk-flipbox.flip-box-effect-slide .tk-flipbox__inner{overflow:hidden}
+.tk-flipbox.flip-box-effect-fade:hover .tk-flipbox__front{opacity:0}
+.tk-flipbox.flip-box-effect-fade .tk-flipbox__front{opacity:1;-webkit-transition:.6s;-o-transition:.6s;transition:.6s;z-index:2}
+.elementor-widget-tk-flipbox:not(.tk-flipbox--flipped) .tk-flipbox__back,.elementor-widget-tk-flipbox:not(.tk-flipbox--flipped) .tk-flipbox__front{-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.tk-flipbox--flipped .tk-flipbox__inner{-webkit-transform:none!important;-ms-transform:none!important;transform:none!important}
+.tk-flipbox--flipped .tk-flipbox__inner .tk-flipbox__front{display:none}
+.tk-flipbox--flipped .tk-flipbox__inner .tk-flipbox__back{-webkit-transform:none!important;-ms-transform:none!important;transform:none!important}
