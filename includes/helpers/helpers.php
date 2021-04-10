@@ -37,6 +37,12 @@ if ( TamanKitProHelpers::is_active( 'elementor.php' ) ) {
 			$widget = array(
 				'FlipBox',
 				'Testimonials',
+				'InfoBox',
+				'BusinessHours',
+				'PromoBox',
+				'FancyHeading',
+				'TeamMember',
+				'Video',
 			);
 
 			$widget[] = 'Circleprogress';

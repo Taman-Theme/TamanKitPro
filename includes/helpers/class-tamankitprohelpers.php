@@ -78,13 +78,18 @@ if ( ! class_exists( 'TamanKitProHelpers' ) ) {
 		 */
 		public function initialize_hooks() {
 
+			if ( class_exists( 'TamanKitHelpers' ) ) {
+				$plugin_dir = ABSPATH . 'wp-content/plugins/plugin-folder/taman-kit';
+				require_once $plugin_dir . '/includes/helpers/helpers.php';
+			}
+
 			add_action(
 				'tamankitpro_initialize_hooks',
 				function() {
 					$this->load_files(
 						array(
+							'includes/modules/class-templatespro',
 							'includes/helpers/helpers',
-							'/includes/modules/class-templatespro',
 						)
 					);
 				}

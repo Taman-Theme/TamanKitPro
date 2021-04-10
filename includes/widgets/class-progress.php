@@ -333,6 +333,26 @@ class Progress  extends Widget_Base {
 			),
 		);
 
+		$this->add_responsive_control(
+			'progress_status_height',
+			array(
+				'label'      => esc_html__( 'Status Bar Height', 'taman-kit-pro' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array(
+					'px',
+				),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 500,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .tk-progress-bar__status-bar' => 'height: {{SIZE}}{{UNIT}}',
+				),
+			),
+		);
+
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			array(

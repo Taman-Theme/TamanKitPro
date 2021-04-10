@@ -7,7 +7,7 @@
         return elementSettings;
     };
 
-    var isEditMode		= false;
+    var isEditMode = false;
 
 
     // Image Comparison Handler
@@ -37,51 +37,51 @@
         });
     };
 
-    
-	var TamanKitPricingTableHandler = function( $scope, $ ) {
-		var id                   = $scope.data('id'),
-			toolTopElm           = $scope.find('.tk-pricing-table-tooptip[data-tooltip]'),
-			elementSettings      = getElementSettings( $scope ),
-        	ttArrow              = elementSettings.tooltip_arrow,
-			ttTrigger            = elementSettings.tooltip_trigger,
-			elementorBreakpoints = elementorFrontend.config.breakpoints;
 
-		toolTopElm.each(function () {
-            var ttPosition   = $(this).data('tooltip-position'),
-				ttTemplate   = '',
-				ttSize       = $(this).data('tooltip-size'),
-				animationIn  = $(this).data('tooltip-animation-in'),
-				animationOut = $(this).data('tooltip-animation-out');
+    var TamanKitPricingTableHandler = function ($scope, $) {
+        var id = $scope.data('id'),
+            toolTopElm = $scope.find('.tk-pricing-table-tooptip[data-tooltip]'),
+            elementSettings = getElementSettings($scope),
+            ttArrow = elementSettings.tooltip_arrow,
+            ttTrigger = elementSettings.tooltip_trigger,
+            elementorBreakpoints = elementorFrontend.config.breakpoints;
+
+        toolTopElm.each(function () {
+            var ttPosition = $(this).data('tooltip-position'),
+                ttTemplate = '',
+                ttSize = $(this).data('tooltip-size'),
+                animationIn = $(this).data('tooltip-animation-in'),
+                animationOut = $(this).data('tooltip-animation-out');
 
             // tablet
-            if ( window.innerWidth <= elementorBreakpoints.lg && window.innerWidth >= elementorBreakpoints.md ) {
+            if (window.innerWidth <= elementorBreakpoints.lg && window.innerWidth >= elementorBreakpoints.md) {
                 ttPosition = $scope.find('.tk-pricing-table-tooptip[data-tooltip]').data('tooltip-position-tablet');
             }
 
             // mobile
-            if ( window.innerWidth < elementorBreakpoints.md ) {
+            if (window.innerWidth < elementorBreakpoints.md) {
                 ttPosition = $scope.find('.tk-pricing-table-tooptip[data-tooltip]').data('tooltip-position-mobile');
             }
-            
-            if ( ttArrow === 'yes' ) {
+
+            if (ttArrow === 'yes') {
                 ttTemplate = '<div class="tk-tooltip tk-tooltip-' + id + ' tk-tooltip-' + ttSize + '"><div class="tk-tooltip-body"><div class="tk-tooltip-content"></div><div class="tk-tooltip-callout"></div></div></div>';
             } else {
                 ttTemplate = '<div class="tk-tooltip tk-tooltip-' + id + ' tk-tooltip-' + ttSize + '"><div class="tk-tooltip-body"><div class="tk-tooltip-content"></div></div></div>';
-			}
-			
-			var tooltipConfig = {
-                template:     ttTemplate,
-				position:     ttPosition,
-				animationIn:  animationIn,
-				animationOut: animationOut,
-				animDuration: 400,
-				alwaysOpen:   false,
-                toggleable:   (ttTrigger === 'click') ? true : false
-			};
-            
-            $(this)._tooltip( tooltipConfig );
+            }
+
+            var tooltipConfig = {
+                template: ttTemplate,
+                position: ttPosition,
+                animationIn: animationIn,
+                animationOut: animationOut,
+                animDuration: 400,
+                alwaysOpen: false,
+                toggleable: (ttTrigger === 'click') ? true : false
+            };
+
+            $(this)._tooltip(tooltipConfig);
         });
-	}
+    }
 
     var TamanKitProgressHandler = function ($scope) {
         var $target = $scope.find(".tk-progress-bar"),
@@ -369,88 +369,134 @@
     };
     /*========================================================*/
     var PPWidgetUpdate = function (slider, selector, type) {
-		if( 'undefined' === typeof type ){
-			type = 'swiper';
-		}
+        if ('undefined' === typeof type) {
+            type = 'swiper';
+        }
 
-		var $triggers = [
-			'ppe-tabs-switched',
-			'ppe-toggle-switched',
-			'ppe-accordion-switched',
-			'ppe-popup-opened',
-		];
+        var $triggers = [
+            'ppe-tabs-switched',
+            'ppe-toggle-switched',
+            'ppe-accordion-switched',
+            'ppe-popup-opened',
+        ];
 
-		$triggers.forEach(function(trigger) {
-			if ( 'undefined' !== typeof trigger ) {
-				$(document).on(trigger, function(e, wrap) {
-					if ( trigger == 'ppe-popup-opened' ) {
-						wrap = $('.tk-modal-popup-' + wrap);
-					}
-					if ( wrap.find( selector ).length > 0 ) {
-						setTimeout(function() {
-							if ( 'slick' === type ) {
-								slider.slick( 'setPosition' );
-							} else if ( 'swiper' === type ) {
-								slider.update();
-							} else if ( 'gallery' === type ) {
-								var $gallery = wrap.find('.tk-image-gallery').eq(0);
-								$gallery.isotope( 'layout' );
-							}
-						}, 100);
-					}
-				});
-			}
-		});
-	};
-	
-    var TamanKitTestimonialsHandler = function ( $scope, $ ) {
-        var $testimonials           = $scope.find( '.tk-testimonials' ).eq( 0 ),
-            $testimonials_wrap      = $scope.find( '.tk-testimonials-wrap' ),
-            $testimonials_layout    = $testimonials.data( 'layout' );
-
-            if ( $testimonials_layout === 'carousel' || $testimonials_layout === 'slideshow' ) {
-                var $slider_options = JSON.parse( $testimonials.attr('data-slider-settings') ),
-                    $thumbs_nav     = $scope.find( '.tk-testimonials-thumb-item-wrap' ),
-                    elementSettings = getElementSettings( $scope );
-                
-                $testimonials.slick( $slider_options );
-
-                if ( $testimonials_layout === 'slideshow' && elementSettings.thumbnail_nav === 'yes' ) {
-                    $thumbs_nav.removeClass('tk-active-slide');
-                    $thumbs_nav.eq(0).addClass('tk-active-slide');
-
-                    $testimonials.on('beforeChange', function ( event, slick, currentSlide, nextSlide ) {
-                        currentSlide = nextSlide;
-                        $thumbs_nav.removeClass('tk-active-slide');
-                        $thumbs_nav.eq( currentSlide ).addClass('tk-active-slide');
-                    });
-
-                    $thumbs_nav.each( function( currentSlide ) {
-                        $(this).on( 'click', function ( e ) {
-                            e.preventDefault();
-                            $testimonials.slick( 'slickGoTo', currentSlide );
-                        });
-                    });
-                }
-
-                $testimonials.slick( 'setPosition' );
-				
-				PPWidgetUpdate( $testimonials, '.tk-testimonials', 'slick' );
-                var isEditMode		= false;
-
-                if ( isEditMode ) {
-                    $testimonials_wrap.resize( function() {
-                        $testimonials.slick( 'setPosition' );
-                    });
-                }
-
+        $triggers.forEach(function (trigger) {
+            if ('undefined' !== typeof trigger) {
+                $(document).on(trigger, function (e, wrap) {
+                    if (trigger == 'ppe-popup-opened') {
+                        wrap = $('.tk-modal-popup-' + wrap);
+                    }
+                    if (wrap.find(selector).length > 0) {
+                        setTimeout(function () {
+                            if ('slick' === type) {
+                                slider.slick('setPosition');
+                            } else if ('swiper' === type) {
+                                slider.update();
+                            } else if ('gallery' === type) {
+                                var $gallery = wrap.find('.tk-image-gallery').eq(0);
+                                $gallery.isotope('layout');
+                            }
+                        }, 100);
+                    }
+                });
             }
-	};
-	
+        });
+    };
+
+    var TamanKitTestimonialsHandler = function ($scope, $) {
+        var $testimonials = $scope.find('.tk-testimonials').eq(0),
+            $testimonials_wrap = $scope.find('.tk-testimonials-wrap'),
+            $testimonials_layout = $testimonials.data('layout');
+
+        if ($testimonials_layout === 'carousel' || $testimonials_layout === 'slideshow') {
+            var $slider_options = JSON.parse($testimonials.attr('data-slider-settings')),
+                $thumbs_nav = $scope.find('.tk-testimonials-thumb-item-wrap'),
+                elementSettings = getElementSettings($scope);
+
+            $testimonials.slick($slider_options);
+
+            if ($testimonials_layout === 'slideshow' && elementSettings.thumbnail_nav === 'yes') {
+                $thumbs_nav.removeClass('tk-active-slide');
+                $thumbs_nav.eq(0).addClass('tk-active-slide');
+
+                $testimonials.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                    currentSlide = nextSlide;
+                    $thumbs_nav.removeClass('tk-active-slide');
+                    $thumbs_nav.eq(currentSlide).addClass('tk-active-slide');
+                });
+
+                $thumbs_nav.each(function (currentSlide) {
+                    $(this).on('click', function (e) {
+                        e.preventDefault();
+                        $testimonials.slick('slickGoTo', currentSlide);
+                    });
+                });
+            }
+
+            $testimonials.slick('setPosition');
+
+            PPWidgetUpdate($testimonials, '.tk-testimonials', 'slick');
+            var isEditMode = false;
+
+            if (isEditMode) {
+                $testimonials_wrap.resize(function () {
+                    $testimonials.slick('setPosition');
+                });
+            }
+
+        }
+    };
+
+    var TkVideo = {
+
+        /**
+         * Auto Play Video
+         */
+
+        _play: function ($selector) {
+
+            var $iframe = $('<iframe/>');
+            var $vid_src = $selector.data('src');
+
+            if (0 === $selector.find('iframe').length) {
+
+                $iframe.attr('src', $vid_src);
+                $iframe.attr('frameborder', '0');
+                $iframe.attr('allowfullscreen', '1');
+                $iframe.attr('allow', 'autoplay;encrypted-media;');
+
+                $selector.html($iframe);
+            }
+        }
+    };
+
+    var TamanKitProVideoHandler = function ($scope, $) {
+        var videoPlay = $scope.find('.tk-video-play'),
+            isLightbox = videoPlay.hasClass('tk-video-play-lightbox');
+
+        videoPlay.off('click').on('click', function (e) {
+
+            e.preventDefault();
+
+            var $selector = $(this).find('.tk-video-player');
+
+            if (!isLightbox) {
+                TkVideo._play($selector);
+            }
+
+        });
+
+        if (videoPlay.data('autoplay') == '1' && !isLightbox) {
+
+            TkVideo._play($scope.find('.tk-video-player'));
+
+        }
+    };
+
     $(window).on("elementor/frontend/init", function () {
-        if ( elementorFrontend.isEditMode() ) {
-			isEditMode = true;
-		}
+        if (elementorFrontend.isEditMode()) {
+            isEditMode = true;
+        }
 
         elementorFrontend.hooks.addAction("frontend/element_ready/tk_counter.default", TamanKitCounterHandler);
         elementorFrontend.hooks.addAction("frontend/element_ready/tk-countdown.default", TamanKitCountDownHandler);
@@ -459,7 +505,8 @@
         elementorFrontend.hooks.addAction("frontend/element_ready/tk-imagecomparison.default", TamanKitImageComparisonHandler);
         elementorFrontend.hooks.addAction("frontend/element_ready/tk-pricetable.default", TamanKitPricingTableHandler);
         elementorFrontend.hooks.addAction("frontend/element_ready/tk-testimonials.default", TamanKitTestimonialsHandler);
+        elementorFrontend.hooks.addAction("frontend/element_ready/tk-video.default", TamanKitProVideoHandler);
 
-        
+
     });
 })(jQuery);

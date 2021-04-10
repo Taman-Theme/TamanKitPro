@@ -1,0 +1,315 @@
+.tk-video-container {
+    background-color: #000;
+    cursor: pointer;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.tk-video-play-icon {
+    cursor: pointer;
+    font-size: 80px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    -webkit-transition: .25s all;
+    transition: .25s all;
+}
+
+.tk-video-play-icon img {
+    display: block;
+}
+
+/*===============================*/
+.tk-tm-wrapper {
+    position: relative;
+}
+
+.tk-tm-wrapper .tk-tm-social-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tk-tm-wrapper .tk-tm-social-links li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+.tk-tm-wrapper .tk-tm-title-divider-wrap {
+    font-size: 0;
+    line-height: 1;
+}
+
+.tk-tm-wrapper li,
+.tk-tm-wrapper .tk-tm-social-icon,
+.tk-tm-wrapper .tk-tm-divider {
+    display: inline-block;
+}
+
+.tk-tm-wrapper .tk-tm:hover .tk-tm-overlay-content-wrap {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tk-tm-wrapper .tk-tm-image {
+    display: inline-block;
+    position: relative;
+}
+
+.tk-tm-wrapper .tk-tm-image img {
+    display: block;
+}
+
+.tk-tm-content-normal {
+    position: relative;
+    z-index: 1;
+}
+
+.tk-tm-overlay-content-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+}
+
+.tk-tm-overlay-content-wrap:before {
+    background-color: #000;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.tk-tm-overlay-content-wrap .tk-tm-content {
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.tk-tm-social-icon-wrap {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+}
+
+.tk-tm-name a {
+    color: inherit;
+}
+
+.tk-tm-description p:last-child {
+    margin-bottom: 0;
+}
+
+.tk-tm-carousel {
+    position: relative;
+}
+
+.tk-tm-carousel-dots-outside .swiper-pagination {
+    position: static;
+}
+
+/*============================*/
+.tk-heading-fill-gradient .tk-heading-text {
+    display: block;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    z-index: 0;
+}
+
+/*=============================*/
+.tk-promo-box {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.tk-promo-box .tk-promo-box-icon {
+    display: inline-block;
+    line-height: 1;
+    text-align: center;
+    -webkit-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+}
+
+.tk-promo-box .tk-promo-box-icon .tk-promo-box-icon-inner {
+    height: 1em;
+    width: 1em;
+}
+
+.tk-promo-box .tk-promo-box-overlay,
+.tk-promo-box .tk-promo-box-bg {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    -webkit-transition: transform 0.25s linear 0s;
+    -webkit-transition: -webkit-transform 0.25s linear 0s;
+    transition: -webkit-transform 0.25s linear 0s;
+    transition: transform 0.25s linear 0s;
+    transition: transform 0.25s linear 0s, -webkit-transform 0.25s linear 0s;
+}
+
+.tk-promo-box .tk-promo-box-bg {
+    padding: 40px;
+}
+
+.tk-promo-box .tk-promo-box-wrap {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.tk-promo-box .tk-promo-box-inner {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.tk-promo-box .tk-promo-box-inner-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tk-promo-box .tk-promo-box-banner {
+    -webkit-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+    min-height: 100%;
+    width: 100%;
+}
+
+.tk-promo-box-heading-divider-wrap,
+.tk-promo-box-subheading-divider-wrap {
+    font-size: 0;
+    line-height: 1;
+}
+
+.tk-promo-box-heading-divider,
+.tk-promo-box-subheading-divider {
+    display: inline-block;
+}
+
+/*-------------------------------*/
+.tk-business-hours .tk-business-day,
+.tk-business-hours .tk-business-timing {
+    float: left;
+    width: 50%;
+}
+
+.tk-business-hours .tk-business-timing {
+    text-align: right;
+}
+
+/*====================================*/
+.tk-info-box-container {
+    display: block;
+    -webkit-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+}
+
+.tk-info-box .tk-info-box-icon {
+    display: inline-block;
+    line-height: 1;
+    max-width: 100%;
+}
+
+.tk-info-box .tk-info-box-icon .fa {
+    -webkit-transition: all 0.25s linear 0s;
+    transition: all 0.25s linear 0s;
+    width: 1em;
+    height: 1em;
+}
+
+.tk-info-box .tk-info-box-content {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.tk-info-box-divider-wrap {
+    font-size: 0;
+    line-height: 0;
+}
+
+.tk-info-box-divider {
+    display: inline-block;
+}
+
+.tk-info-box-left .tk-info-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.tk-info-box-left .tk-info-box .tk-info-box-icon-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 20px;
+}
+
+.tk-info-box-left .tk-info-box .tk-info-box-icon,
+.tk-info-box-left .tk-info-box img {
+    width: 100%;
+}
+
+.tk-info-box-right .tk-info-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.tk-info-box-right .tk-info-box .tk-info-box-icon-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 20px;
+}
+
+.tk-info-box-right .tk-info-box .tk-info-box-icon,
+.tk-info-box-right .tk-info-box img {
+    width: 100%;
+}
+
+.tk-info-box-carousel .tk-info-box-content-wrap {
+    overflow: hidden;
+}
+
+.tk-info-box-description p:last-child {
+    margin-bottom: 0;
+}

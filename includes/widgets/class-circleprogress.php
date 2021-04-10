@@ -101,7 +101,6 @@ class Circleprogress  extends Widget_Base {
 		return 'taman-kit-editor-icon  eicon-counter-circle';
 	}
 
-
 	/**
 	 * Get style dependencies.
 	 *
@@ -119,6 +118,7 @@ class Circleprogress  extends Widget_Base {
 		return array(
 			'jquery-numerator',
 			'elementor-waypoints',
+			'taman-kit-pro',
 		);
 	}
 	/**
